@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maksym Kavetskyi — Affiliate Manager</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--c-bg:#0a0a0a;--c-surface:#111;--c-border:#222;--c-accent:#c8f542;--c-text:#f0f0f0;--c-muted:#666;--c-tag:#1a1a1a}
+body{background:var(--c-bg);color:var(--c-text);font-family:'DM Sans',sans-serif;min-height:100vh}
+.wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+.topbar{display:flex;justify-content:flex-end;align-items:center;gap:4px;margin-bottom:32px}
+.topbar-sep{width:1px;height:12px;background:var(--c-border);margin:0 6px}
+.ctrl-btn{background:transparent;border:1px solid var(--c-border);color:var(--c-muted);font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.08em;padding:3px 8px;border-radius:2px;cursor:pointer;transition:border-color .15s,color .15s;display:flex;align-items:center;gap:5px}
+.ctrl-btn:hover{border-color:var(--c-accent);color:var(--c-accent)}
+.ctrl-btn.active{border-color:var(--c-accent);color:var(--c-accent)}
+.hero{padding-bottom:48px;border-bottom:1px solid var(--c-border)}
+.badge{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-accent);border:1px solid var(--c-accent);padding:4px 10px;border-radius:2px;margin-bottom:20px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:8px}
+.name-sub{font-size:13px;color:var(--c-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.contacts{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--c-muted)}
+.contacts a{color:var(--c-muted);text-decoration:none;display:flex;align-items:center;gap:6px}
+.contacts a:hover{color:var(--c-accent)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--c-border);margin:40px 0;border:1px solid var(--c-border);border-radius:4px;overflow:hidden}
+.stat{background:var(--c-surface);padding:24px 20px;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--c-accent);line-height:1}
+.stat-label{font-size:11px;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+.section{padding:40px 0;border-bottom:1px solid var(--c-border)}
+.section-title{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--c-muted);margin-bottom:28px}
+.job{display:grid;grid-template-columns:1fr auto;gap:0 16px;margin-bottom:32px}
+.job:last-child{margin-bottom:0}
+.job-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:500;color:#fff;margin-bottom:2px}
+.job-company{font-size:13px;color:var(--c-accent);margin-bottom:12px}
+.job-date{font-size:12px;color:var(--c-muted);white-space:nowrap;margin-top:4px;text-align:right;line-height:1.6}
+.job ul{list-style:none;padding:0}
+.job li{font-size:14px;color:#aaa;line-height:1.6;padding-left:14px;position:relative;margin-bottom:6px}
+.job li::before{content:'—';position:absolute;left:0;color:var(--c-accent);font-size:12px}
+.job-note{font-size:12px;color:var(--c-muted);font-style:italic;margin-top:10px;padding-left:14px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.skill-block-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--c-muted);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:var(--c-tag);border:1px solid var(--c-border);color:#bbb;font-size:12px;padding:4px 10px;border-radius:2px}
+.langs{display:flex;gap:16px;flex-wrap:wrap}
+.lang-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#aaa}
+.lang-level{font-size:11px;color:var(--c-muted);background:var(--c-tag);padding:2px 8px;border-radius:2px}
+.footer-note{padding-top:40px;text-align:center}
+.footer-quote{font-family:'Syne',sans-serif;font-size:20px;font-weight:500;color:#fff;line-height:1.4;margin-bottom:16px}
+.footer-quote span{color:var(--c-accent)}
+.footer-sub{font-size:13px;color:var(--c-muted);line-height:1.7;max-width:480px;margin:0 auto 8px}
+.salary{display:inline-block;font-size:12px;color:var(--c-accent);border:1px solid var(--c-border);padding:4px 12px;border-radius:2px;margin-top:12px;margin-bottom:24px}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--c-accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-decoration:none;padding:12px 24px;border-radius:2px;transition:opacity .15s}
+.cta:hover{opacity:.85}
+@media print{.topbar{display:none}.cta{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <button class="ctrl-btn active" id="btn-ru" onclick="setLang('ru')">RU</button>
+    <button class="ctrl-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <div class="topbar-sep"></div>
+    <button class="ctrl-btn" onclick="window.print()"><i class="ti ti-download"></i>Download PDF</button>
+  </div>
+
+  <div class="hero">
+    <div class="badge" id="badge">Открыт к предложениям</div>
+    <h1>Максим<br>Кавецький</h1>
+    <div class="name-sub">Maksym Kavetskyi · Affiliate Manager</div>
+    <div class="contacts">
+      <a href="mailto:max.kavetsky2k@gmail.com"><i class="ti ti-mail"></i>max.kavetsky2k@gmail.com</a>
+      <a href="https://t.me/not_quotedddd"><i class="ti ti-brand-telegram"></i>@not_quotedddd</a>
+      <span style="display:flex;align-items:center;gap:6px"><i class="ti ti-map-pin"></i><span id="location">Тбилиси · Remote</span></span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-label">FTD monthly</div></div>
+    <div class="stat"><div class="stat-num">Tier 2/3</div><div class="stat-label">TH • VN • CIS</div></div>
+    <div class="stat"><div class="stat-num">6+</div><div class="stat-label" id="stat-exp">мес опыта</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title" id="sec-exp">Опыт работы</div>
+    <div class="job">
+      <div>
+        <div class="job-title" id="job1-title">Affiliate Manager</div>
+        <div class="job-company" id="job1-company">iGaming-команда · Remote</div>
+        <ul id="job1-list">
+          <li>Работа с influencer/source-связками в Tier 2/3 GEO: Таиланд, Вьетнам, СНГ</li>
+          <li>20+ FTD в месяц через партнёрские связки в зависимости от GEO и качества трафика</li>
+          <li>Анализ трафика: CTR, CR, FTD, retention, активность пользователей после регистрации</li>
+          <li>Коммуникация с партнёрами, поиск источников, ведение переговоров</li>
+        </ul>
+        <div class="job-note" id="job1-note">↳ Основное направление, ищу похожую вакансию</div>
+      </div>
+      <div class="job-date"><span id="job1-date">конец 2025 — 2026</span><br><span style="color:var(--c-muted);font-size:11px">6+ мес</span></div>
+    </div>
+    <div class="job">
+      <div>
+        <div class="job-title" id="job2-title">Google Play — работа с консолями</div>
+        <div class="job-company" id="job2-company">Команда · Remote</div>
+        <ul id="job2-list">
+          <li>Поиск владельцев консолей и команд для загрузки приложений</li>
+          <li>Парсинг базы и email/мессенджер рассылки</li>
+        </ul>
+        <div class="job-note" id="job2-note">↳ Дополнительный опыт</div>
+      </div>
+      <div class="job-date"><span id="job2-date">2025 (весь год)</span><br><span style="color:var(--c-muted);font-size:11px">1 <span id="year-label">год</span></span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title" id="sec-skills">Навыки</div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-block-title" id="sk1-title">Аналитика</div>
+        <div class="tags"><span class="tag">CTR / CR / FTD</span><span class="tag">Retention</span><span class="tag" id="sk-tq">Качество трафика</span><span class="tag">Google Sheets</span></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title" id="sk2-title">Партнёрская работа</div>
+        <div class="tags"><span class="tag" id="sk-find">Поиск партнёров</span><span class="tag" id="sk-neg">Переговоры</span><span class="tag" id="sk-onb">Онбординг</span><span class="tag" id="sk-com">Коммуникация</span></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title" id="sk3-title">Инструменты</div>
+        <div class="tags"><span class="tag" id="sk-auto">Автоматизация</span><span class="tag" id="sk-ai">AI-инструменты</span><span class="tag" id="sk-parse">Парсинг / рассылки</span></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title" id="sk4-title">Вертикали / GEO</div>
+        <div class="tags"><span class="tag">iGaming</span><span class="tag">CIS</span><span class="tag">Thailand</span><span class="tag">Vietnam</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title" id="sec-lang">Языки</div>
+    <div class="langs">
+      <div class="lang-item">Украинский <span class="lang-level" id="ll-uk">Родной</span></div>
+      <div class="lang-item">Русский <span class="lang-level" id="ll-ru">Родной</span></div>
+      <div class="lang-item">English <span class="lang-level">B1</span></div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <div class="footer-quote" id="footer-quote">Хочу расти в affiliate-маркетинге —<br><span>вместе с сильной командой</span></div>
+    <p class="footer-sub" id="footer-sub">Уже знаком с affiliate-сферой на практике и хочу дальше развиваться в этом направлении. Быстро обучаюсь, глубоко вовлекаюсь в процессы и быстро адаптируюсь под новые задачи.</p>
+    <div class="salary" id="salary">Open to offers · Remote · Тбилиси</div>
+    <br>
+    <a class="cta" href="https://t.me/not_quotedddd" id="cta-btn">Написать в Telegram ↗</a>
+  </div>
+</div>
+
+<script>
+const t={
+  ru:{badge:'Открыт к предложениям',statExp:'мес опыта',secExp:'Опыт работы',job1Title:'Affiliate Manager',job1Company:'iGaming-команда · Remote',job1List:['Работа с influencer/source-связками в Tier 2/3 GEO: Таиланд, Вьетнам, СНГ','20+ FTD в месяц через партнёрские связки в зависимости от GEO и качества трафика','Анализ трафика: CTR, CR, FTD, retention, активность пользователей после регистрации','Коммуникация с партнёрами, поиск источников, ведение переговоров'],job1Note:'↳ Основное направление, ищу похожую вакансию',job1Date:'конец 2025 — 2026',job2Title:'Google Play — работа с консолями',job2Company:'Команда · Remote',job2List:['Поиск владельцев консолей и команд для загрузки приложений','Парсинг базы и email/мессенджер рассылки'],job2Note:'↳ Дополнительный опыт',job2Date:'2025 (весь год)',yearLabel:'год',secSkills:'Навыки',sk1:'Аналитика',sk2:'Партнёрская работа',sk3:'Инструменты',sk4:'Вертикали / GEO',skTq:'Качество трафика',skFind:'Поиск партнёров',skNeg:'Переговоры',skOnb:'Онбординг',skCom:'Коммуникация',skAuto:'Автоматизация',skAi:'AI-инструменты',skParse:'Парсинг / рассылки',secLang:'Языки',llUk:'Родной',llRu:'Родной',location:'Тбилиси · Remote',footerQuote:'Хочу расти в affiliate-маркетинге —<br><span>вместе с сильной командой</span>',footerSub:'Уже знаком с affiliate-сферой на практике и хочу дальше развиваться в этом направлении. Быстро обучаюсь, глубоко вовлекаюсь в процессы и быстро адаптируюсь под новые задачи.',salary:'Open to offers · Remote · Тбилиси',cta:'Написать в Telegram ↗'},
+  en:{badge:'Open to offers',statExp:'months exp.',secExp:'Work experience',job1Title:'Affiliate Manager',job1Company:'iGaming team · Remote',job1List:['Managed influencer/source funnels across Tier 2/3 GEO: Thailand, Vietnam, CIS','20+ FTD per month via partner funnels depending on GEO and traffic quality','Traffic analysis: CTR, CR, FTD, retention, user activity post-registration','Partner communication, source prospecting, negotiation'],job1Note:'↳ Core focus — looking for a similar role',job1Date:'late 2025 — 2026',job2Title:'Google Play — Console Management',job2Company:'Team · Remote',job2List:['Sourcing console owners and teams for app uploads','Database parsing and email/messenger outreach'],job2Note:'↳ Additional experience',job2Date:'2025 (full year)',yearLabel:'yr',secSkills:'Skills',sk1:'Analytics',sk2:'Partner work',sk3:'Tools',sk4:'Verticals / GEO',skTq:'Traffic quality',skFind:'Partner sourcing',skNeg:'Negotiation',skOnb:'Onboarding',skCom:'Communication',skAuto:'Automation',skAi:'AI tools',skParse:'Parsing / outreach',secLang:'Languages',llUk:'Native',llRu:'Native',location:'Tbilisi · Remote',footerQuote:'Looking to grow in affiliate marketing —<br><span>with a strong team</span>',footerSub:'I have hands-on experience in the affiliate space and want to keep developing in this field. I learn fast, get deeply involved in processes, and adapt quickly to new challenges.',salary:'Open to offers · Remote · Tbilisi',cta:'Message on Telegram ↗'}
+};
+function setLang(lang){
+  const d=t[lang];
+  document.getElementById('badge').textContent=d.badge;
+  document.getElementById('stat-exp').textContent=d.statExp;
+  document.getElementById('sec-exp').textContent=d.secExp;
+  document.getElementById('job1-title').textContent=d.job1Title;
+  document.getElementById('job1-company').textContent=d.job1Company;
+  document.getElementById('job1-list').innerHTML=d.job1List.map(i=>`<li>${i}</li>`).join('');
+  document.getElementById('job1-note').textContent=d.job1Note;
+  document.getElementById('job1-date').textContent=d.job1Date;
+  document.getElementById('job2-title').textContent=d.job2Title;
+  document.getElementById('job2-company').textContent=d.job2Company;
+  document.getElementById('job2-list').innerHTML=d.job2List.map(i=>`<li>${i}</li>`).join('');
+  document.getElementById('job2-note').textContent=d.job2Note;
+  document.getElementById('job2-date').textContent=d.job2Date;
+  document.getElementById('year-label').textContent=d.yearLabel;
+  document.getElementById('sec-skills').textContent=d.secSkills;
+  document.getElementById('sk1-title').textContent=d.sk1;
+  document.getElementById('sk2-title').textContent=d.sk2;
+  document.getElementById('sk3-title').textContent=d.sk3;
+  document.getElementById('sk4-title').textContent=d.sk4;
+  document.getElementById('sk-tq').textContent=d.skTq;
+  document.getElementById('sk-find').textContent=d.skFind;
+  document.getElementById('sk-neg').textContent=d.skNeg;
+  document.getElementById('sk-onb').textContent=d.skOnb;
+  document.getElementById('sk-com').textContent=d.skCom;
+  document.getElementById('sk-auto').textContent=d.skAuto;
+  document.getElementById('sk-ai').textContent=d.skAi;
+  document.getElementById('sk-parse').textContent=d.skParse;
+  document.getElementById('sec-lang').textContent=d.secLang;
+  document.getElementById('ll-uk').textContent=d.llUk;
+  document.getElementById('ll-ru').textContent=d.llRu;
+  document.getElementById('location').textContent=d.location;
+  document.getElementById('footer-quote').innerHTML=d.footerQuote;
+  document.getElementById('footer-sub').textContent=d.footerSub;
+  document.getElementById('salary').textContent=d.salary;
+  document.getElementById('cta-btn').textContent=d.cta;
+  document.getElementById('btn-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+}
+</script>
+</body>
+</html>
