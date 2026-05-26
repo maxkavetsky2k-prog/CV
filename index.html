@@ -59,11 +59,11 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;
 <div class="wrap">
   <div class="topbar">
     <button class="ctrl-btn active" id="btn-ru" onclick="setLang('ru')">RU</button>
+    <button class="ctrl-btn" id="btn-ua" onclick="setLang('ua')">UA</button>
     <button class="ctrl-btn" id="btn-en" onclick="setLang('en')">EN</button>
     <div class="topbar-sep"></div>
     <button class="ctrl-btn" onclick="window.print()"><i class="ti ti-download"></i>Download PDF</button>
   </div>
-
   <div class="hero">
     <div class="badge" id="badge">Открыт к предложениям</div>
     <h1>Максим<br>Кавецький</h1>
@@ -74,13 +74,11 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;
       <span style="display:flex;align-items:center;gap:6px"><i class="ti ti-map-pin"></i><span id="location">Тбилиси · Remote</span></span>
     </div>
   </div>
-
   <div class="stats">
     <div class="stat"><div class="stat-num">20+</div><div class="stat-label">FTD monthly</div></div>
     <div class="stat"><div class="stat-num">Tier 2/3</div><div class="stat-label">TH • VN • CIS</div></div>
     <div class="stat"><div class="stat-num">6+</div><div class="stat-label" id="stat-exp">мес опыта</div></div>
   </div>
-
   <div class="section">
     <div class="section-title" id="sec-exp">Опыт работы</div>
     <div class="job">
@@ -95,7 +93,7 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;
         </ul>
         <div class="job-note" id="job1-note">↳ Основное направление, ищу похожую вакансию</div>
       </div>
-      <div class="job-date"><span id="job1-date">конец 2025 — 2026</span><br><span style="color:var(--c-muted);font-size:11px">6+ мес</span></div>
+      <div class="job-date"><span id="job1-date">конец 2025 — 2026</span><br><span style="color:var(--c-muted);font-size:11px">6+ <span id="mo-label">мес</span></span></div>
     </div>
     <div class="job">
       <div>
@@ -110,7 +108,6 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;
       <div class="job-date"><span id="job2-date">2025 (весь год)</span><br><span style="color:var(--c-muted);font-size:11px">1 <span id="year-label">год</span></span></div>
     </div>
   </div>
-
   <div class="section">
     <div class="section-title" id="sec-skills">Навыки</div>
     <div class="skills-grid">
@@ -132,29 +129,26 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:700;
       </div>
     </div>
   </div>
-
   <div class="section">
     <div class="section-title" id="sec-lang">Языки</div>
     <div class="langs">
-      <div class="lang-item">Украинский <span class="lang-level" id="ll-uk">Родной</span></div>
-      <div class="lang-item">Русский <span class="lang-level" id="ll-ru">Родной</span></div>
+      <div class="lang-item"><span id="lang-uk-name">Украинский</span> <span class="lang-level" id="ll-uk">Родной</span></div>
+      <div class="lang-item"><span id="lang-ru-name">Русский</span> <span class="lang-level" id="ll-ru">Родной</span></div>
       <div class="lang-item">English <span class="lang-level">B1</span></div>
     </div>
   </div>
-
   <div class="footer-note">
     <div class="footer-quote" id="footer-quote">Хочу расти в affiliate-маркетинге —<br><span>вместе с сильной командой</span></div>
     <p class="footer-sub" id="footer-sub">Уже знаком с affiliate-сферой на практике и хочу дальше развиваться в этом направлении. Быстро обучаюсь, глубоко вовлекаюсь в процессы и быстро адаптируюсь под новые задачи.</p>
-    <div class="salary" id="salary">Open to offers · Remote · Тбилиси</div>
-    <br>
+    <div class="salary" id="salary">Open to offers · Remote · Тбилиси</div><br>
     <a class="cta" href="https://t.me/not_quotedddd" id="cta-btn">Написать в Telegram ↗</a>
   </div>
 </div>
-
 <script>
 const t={
-  ru:{badge:'Открыт к предложениям',statExp:'мес опыта',secExp:'Опыт работы',job1Title:'Affiliate Manager',job1Company:'iGaming-команда · Remote',job1List:['Работа с influencer/source-связками в Tier 2/3 GEO: Таиланд, Вьетнам, СНГ','20+ FTD в месяц через партнёрские связки в зависимости от GEO и качества трафика','Анализ трафика: CTR, CR, FTD, retention, активность пользователей после регистрации','Коммуникация с партнёрами, поиск источников, ведение переговоров'],job1Note:'↳ Основное направление, ищу похожую вакансию',job1Date:'конец 2025 — 2026',job2Title:'Google Play — работа с консолями',job2Company:'Команда · Remote',job2List:['Поиск владельцев консолей и команд для загрузки приложений','Парсинг базы и email/мессенджер рассылки'],job2Note:'↳ Дополнительный опыт',job2Date:'2025 (весь год)',yearLabel:'год',secSkills:'Навыки',sk1:'Аналитика',sk2:'Партнёрская работа',sk3:'Инструменты',sk4:'Вертикали / GEO',skTq:'Качество трафика',skFind:'Поиск партнёров',skNeg:'Переговоры',skOnb:'Онбординг',skCom:'Коммуникация',skAuto:'Автоматизация',skAi:'AI-инструменты',skParse:'Парсинг / рассылки',secLang:'Языки',llUk:'Родной',llRu:'Родной',location:'Тбилиси · Remote',footerQuote:'Хочу расти в affiliate-маркетинге —<br><span>вместе с сильной командой</span>',footerSub:'Уже знаком с affiliate-сферой на практике и хочу дальше развиваться в этом направлении. Быстро обучаюсь, глубоко вовлекаюсь в процессы и быстро адаптируюсь под новые задачи.',salary:'Open to offers · Remote · Тбилиси',cta:'Написать в Telegram ↗'},
-  en:{badge:'Open to offers',statExp:'months exp.',secExp:'Work experience',job1Title:'Affiliate Manager',job1Company:'iGaming team · Remote',job1List:['Managed influencer/source funnels across Tier 2/3 GEO: Thailand, Vietnam, CIS','20+ FTD per month via partner funnels depending on GEO and traffic quality','Traffic analysis: CTR, CR, FTD, retention, user activity post-registration','Partner communication, source prospecting, negotiation'],job1Note:'↳ Core focus — looking for a similar role',job1Date:'late 2025 — 2026',job2Title:'Google Play — Console Management',job2Company:'Team · Remote',job2List:['Sourcing console owners and teams for app uploads','Database parsing and email/messenger outreach'],job2Note:'↳ Additional experience',job2Date:'2025 (full year)',yearLabel:'yr',secSkills:'Skills',sk1:'Analytics',sk2:'Partner work',sk3:'Tools',sk4:'Verticals / GEO',skTq:'Traffic quality',skFind:'Partner sourcing',skNeg:'Negotiation',skOnb:'Onboarding',skCom:'Communication',skAuto:'Automation',skAi:'AI tools',skParse:'Parsing / outreach',secLang:'Languages',llUk:'Native',llRu:'Native',location:'Tbilisi · Remote',footerQuote:'Looking to grow in affiliate marketing —<br><span>with a strong team</span>',footerSub:'I have hands-on experience in the affiliate space and want to keep developing in this field. I learn fast, get deeply involved in processes, and adapt quickly to new challenges.',salary:'Open to offers · Remote · Tbilisi',cta:'Message on Telegram ↗'}
+  ru:{badge:'Открыт к предложениям',statExp:'мес опыта',secExp:'Опыт работы',job1Title:'Affiliate Manager',job1Company:'iGaming-команда · Remote',job1List:['Работа с influencer/source-связками в Tier 2/3 GEO: Таиланд, Вьетнам, СНГ','20+ FTD в месяц через партнёрские связки в зависимости от GEO и качества трафика','Анализ трафика: CTR, CR, FTD, retention, активность пользователей после регистрации','Коммуникация с партнёрами, поиск источников, ведение переговоров'],job1Note:'↳ Основное направление, ищу похожую вакансию',job1Date:'конец 2025 — 2026',moLabel:'мес',job2Title:'Google Play — работа с консолями',job2Company:'Команда · Remote',job2List:['Поиск владельцев консолей и команд для загрузки приложений','Парсинг базы и email/мессенджер рассылки'],job2Note:'↳ Дополнительный опыт',job2Date:'2025 (весь год)',yearLabel:'год',secSkills:'Навыки',sk1:'Аналитика',sk2:'Партнёрская работа',sk3:'Инструменты',sk4:'Вертикали / GEO',skTq:'Качество трафика',skFind:'Поиск партнёров',skNeg:'Переговоры',skOnb:'Онбординг',skCom:'Коммуникация',skAuto:'Автоматизация',skAi:'AI-инструменты',skParse:'Парсинг / рассылки',secLang:'Языки',langUk:'Украинский',langRu:'Русский',llUk:'Родной',llRu:'Родной',location:'Тбилиси · Remote',footerQuote:'Хочу расти в affiliate-маркетинге —<br><span>вместе с сильной командой</span>',footerSub:'Уже знаком с affiliate-сферой на практике и хочу дальше развиваться в этом направлении. Быстро обучаюсь, глубоко вовлекаюсь в процессы и быстро адаптируюсь под новые задачи.',salary:'Open to offers · Remote · Тбилиси',cta:'Написать в Telegram ↗'},
+  ua:{badge:'Відкритий до пропозицій',statExp:'міс досвіду',secExp:'Досвід роботи',job1Title:'Affiliate Manager',job1Company:'iGaming-команда · Remote',job1List:['Робота з influencer/source-зв\'язками в Tier 2/3 GEO: Таїланд, В\'єтнам, СНД','20+ FTD на місяць через партнерські зв\'язки залежно від GEO та якості трафіку','Аналіз трафіку: CTR, CR, FTD, retention, активність користувачів після реєстрації','Комунікація з партнерами, пошук джерел, ведення переговорів'],job1Note:'↳ Основний напрямок, шукаю схожу вакансію',job1Date:'кінець 2025 — 2026',moLabel:'міс',job2Title:'Google Play — робота з консолями',job2Company:'Команда · Remote',job2List:['Пошук власників консолей та команд для завантаження застосунків','Парсинг бази та email/месенджер розсилки'],job2Note:'↳ Додатковий досвід',job2Date:'2025 (весь рік)',yearLabel:'рік',secSkills:'Навички',sk1:'Аналітика',sk2:'Партнерська робота',sk3:'Інструменти',sk4:'Вертикалі / GEO',skTq:'Якість трафіку',skFind:'Пошук партнерів',skNeg:'Переговори',skOnb:'Онбординг',skCom:'Комунікація',skAuto:'Автоматизація',skAi:'AI-інструменти',skParse:'Парсинг / розсилки',secLang:'Мови',langUk:'Українська',langRu:'Російська',llUk:'Рідна',llRu:'Рідна',location:'Тбілісі · Remote',footerQuote:'Хочу рости в affiliate-маркетингу —<br><span>разом із сильною командою</span>',footerSub:'Вже знайомий з affiliate-сферою на практиці та хочу далі розвиватися в цьому напрямку. Швидко навчаюся, глибоко занурююсь у процеси та швидко адаптуюся до нових завдань.',salary:'Open to offers · Remote · Тбілісі',cta:'Написати в Telegram ↗'},
+  en:{badge:'Open to offers',statExp:'months exp.',secExp:'Work experience',job1Title:'Affiliate Manager',job1Company:'iGaming team · Remote',job1List:['Managed influencer/source funnels across Tier 2/3 GEO: Thailand, Vietnam, CIS','20+ FTD per month via partner funnels depending on GEO and traffic quality','Traffic analysis: CTR, CR, FTD, retention, user activity post-registration','Partner communication, source prospecting, negotiation'],job1Note:'↳ Core focus — looking for a similar role',job1Date:'late 2025 — 2026',moLabel:'mo',job2Title:'Google Play — Console Management',job2Company:'Team · Remote',job2List:['Sourcing console owners and teams for app uploads','Database parsing and email/messenger outreach'],job2Note:'↳ Additional experience',job2Date:'2025 (full year)',yearLabel:'yr',secSkills:'Skills',sk1:'Analytics',sk2:'Partner work',sk3:'Tools',sk4:'Verticals / GEO',skTq:'Traffic quality',skFind:'Partner sourcing',skNeg:'Negotiation',skOnb:'Onboarding',skCom:'Communication',skAuto:'Automation',skAi:'AI tools',skParse:'Parsing / outreach',secLang:'Languages',langUk:'Ukrainian',langRu:'Russian',llUk:'Native',llRu:'Native',location:'Tbilisi · Remote',footerQuote:'Looking to grow in affiliate marketing —<br><span>with a strong team</span>',footerSub:'I have hands-on experience in the affiliate space and want to keep developing in this field. I learn fast, get deeply involved in processes, and adapt quickly to new challenges.',salary:'Open to offers · Remote · Tbilisi',cta:'Message on Telegram ↗'}
 };
 function setLang(lang){
   const d=t[lang];
@@ -166,6 +160,7 @@ function setLang(lang){
   document.getElementById('job1-list').innerHTML=d.job1List.map(i=>`<li>${i}</li>`).join('');
   document.getElementById('job1-note').textContent=d.job1Note;
   document.getElementById('job1-date').textContent=d.job1Date;
+  document.getElementById('mo-label').textContent=d.moLabel;
   document.getElementById('job2-title').textContent=d.job2Title;
   document.getElementById('job2-company').textContent=d.job2Company;
   document.getElementById('job2-list').innerHTML=d.job2List.map(i=>`<li>${i}</li>`).join('');
@@ -186,6 +181,8 @@ function setLang(lang){
   document.getElementById('sk-ai').textContent=d.skAi;
   document.getElementById('sk-parse').textContent=d.skParse;
   document.getElementById('sec-lang').textContent=d.secLang;
+  document.getElementById('lang-uk-name').textContent=d.langUk;
+  document.getElementById('lang-ru-name').textContent=d.langRu;
   document.getElementById('ll-uk').textContent=d.llUk;
   document.getElementById('ll-ru').textContent=d.llRu;
   document.getElementById('location').textContent=d.location;
@@ -194,9 +191,9 @@ function setLang(lang){
   document.getElementById('salary').textContent=d.salary;
   document.getElementById('cta-btn').textContent=d.cta;
   document.getElementById('btn-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('btn-ua').classList.toggle('active',lang==='ua');
   document.getElementById('btn-en').classList.toggle('active',lang==='en');
 }
 </script>
 </body>
 </html>
-
